@@ -1,0 +1,29 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <main>
+            <h1>Activities</h1>
+            <% activities.forEach( (activity) => {
+                %> <li><%= activity.name %> <%= activity.money %></li>
+            <% }) %><br>
+
+            <form method="POST" action="/activities/donate">
+                <input placeholder="username" type="text" name="userName"><br>
+                <input placeholder="password" type="text" name="password"><br>
+                <input placeholder="name of the activity" type="text" name="activityName"><br>
+                <input placeholder="amount of money" type="number" name="money"><br><br>
+                <button type="submit">Send form</button>
+            </form><br>
+
+            <h2>Check user money</h2>
+
+            <form method="POST" action="/users/check">
+                <input placeholder="your name" type="text" name="userName"><br>
+                <input placeholder="your password" type="text" name="password"><br><br>
+                <button type="submit">Send form</button>
+            </form>
+        </main>
+    </body>
+</html>
